@@ -1,0 +1,24 @@
+# Workaround for missing GH projects (beta) features: Adding new issues to a project.
+# https://github.com/actions/add-to-project
+# It's on the roadmap: https://github.com/github/roadmap/issues/286 :fingers_crossed:
+
+name: Add issues to product board
+
+on:
+  workflow_call:
+  issues:
+    types:
+      - opened
+
+jobs:
+  add-to-project:
+    name: Add issue to product board
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/add-to-project@main
+        with:
+          project-url: https://github.com/orgs/c-wire/projects/8
+          # TODO: alternative to PAT?
+          github-token: ${{ secrets.GH_PROJECT_MGMT_PAT_ESPEN }}
+          # labeled: bug, new
+          # label-operator: AND
