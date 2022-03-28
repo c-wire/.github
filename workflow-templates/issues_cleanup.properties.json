@@ -1,0 +1,4 @@
+{
+  "name": "Clean up repository issues",
+  "description": "Identifies and closes inactive issues."
+}
