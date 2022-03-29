@@ -6,6 +6,9 @@ name: Add issues to product board
 
 on:
   workflow_call:
+    secrets:
+      github_pat:
+        required: true
   issues:
     types:
       - opened
@@ -19,6 +22,6 @@ jobs:
         with:
           project-url: https://github.com/orgs/c-wire/projects/8
           # TODO: alternative to PAT?
-          github-token: ${{ secrets.GH_PROJECT_MGMT_PAT_ESPEN }}
+          github-token: ${{ secrets.github_pat }}
           # labeled: bug, new
           # label-operator: AND
