@@ -14,8 +14,8 @@ jobs:
     steps:
       - uses: actions/stale@v3
         with:
-          days-before-issue-stale: 30
-          days-before-issue-close: 14
+          days-before-issue-stale: 45
+          days-before-issue-close: 5
           stale-issue-label: "stale"
           stale-issue-message: "This issue has been inactive for a while, it will be closed soon."
           close-issue-message: |
