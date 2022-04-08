@@ -2,7 +2,7 @@
 # https://github.com/actions/add-to-project
 # It's on the roadmap: https://github.com/github/roadmap/issues/286 :fingers_crossed:
 
-name: Add issues to product board
+name: Add issues and PRs to product board
 
 on:
   workflow_call:
@@ -10,6 +10,9 @@ on:
       github_pat:
         required: true
   issues:
+    types:
+      - opened
+  pull_request:
     types:
       - opened
 
